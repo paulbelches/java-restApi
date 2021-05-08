@@ -1,6 +1,7 @@
 package com.example.restservice;
 import org.json.simple.JSONArray;
-
+import org.json.simple.JSONObject;
+import java.util.*;
 public class SearchResult {
 
 	private final JSONArray content;
@@ -9,7 +10,8 @@ public class SearchResult {
 			new APIConfig("http://itunes.apple.com/search?term=", "&entity=movie", "itunes", "movie", true, "results"),
 			new APIConfig("http://api.tvmaze.com/search/shows?q=", "", "serie", "tvmaze", false, ""),
 	};
-	
+
+	//Obtain the result from each of the soruces and merge them into the final result. 
 	public SearchResult(String term) {
 		JSONArray resultArray = new JSONArray();
 		for (int i = 0; i < configs.length - 1; i++){
@@ -23,6 +25,18 @@ public class SearchResult {
 			);
 			resultArray.addAll(tempResult.getContent());	
 		}
+
+			///Sort the result by type
+		resultArray.sort( new Comparator<JSONObject>(){
+			public int compare(JSONObject ob1, JSONObject ob2){
+				String s1, s2;
+				s1 = (String)ob1.get("type");
+				s2 = (String)ob2.get("type");
+				return s1.compareTo(s2);
+			}
+		});
+		
+
 		this.content = resultArray;
 	}
 

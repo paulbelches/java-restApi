@@ -1,5 +1,7 @@
 package com.example.restservice;
 
+//Model the api configurations 
+
 public class APIConfig {
 
 	private final String preUrl;
