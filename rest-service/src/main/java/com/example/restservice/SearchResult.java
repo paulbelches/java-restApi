@@ -26,8 +26,9 @@ public class SearchResult {
 			resultArray.addAll(tempResult.getContent());	
 		}
 
-			///Sort the result by type
+		///Sort the result by type
 		resultArray.sort( new Comparator<JSONObject>(){
+			// Function that determines how the aray is going to be sorted
 			public int compare(JSONObject ob1, JSONObject ob2){
 				String s1, s2;
 				s1 = (String)ob1.get("type");
