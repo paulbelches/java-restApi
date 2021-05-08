@@ -30,7 +30,7 @@ public class ApiResult {
 			//Add extra fields to the result
 			tempObj.put("type", type);
 			tempObj.put("source", source);
-			tempObj.put("data", (JSONObject)array.get(0));
+			tempObj.put("data", (JSONObject)array.get(i));
 			resultArray.add((JSONObject)tempObj);
 		}
 		this.content = resultArray;
