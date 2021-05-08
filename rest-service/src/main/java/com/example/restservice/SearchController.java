@@ -14,7 +14,7 @@ public class SearchController {
 	private static final Logger log = LoggerFactory.getLogger(SearchController.class);
 	//Get controller
 	@GetMapping("/search")
-	public SearchResult SearchResult(@RequestParam(value = "term", defaultValue = "Iron+man") String term) {
+	public SearchResult SearchResult(@RequestParam(value = "term", defaultValue = " ") String term) {
 		log.info("The term "+term+" was requested");
 		return new SearchResult(term);
 	}
