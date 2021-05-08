@@ -5,11 +5,11 @@ This is a Java REST API using Spring. It recovers info from sites sucha as  itun
 ## Dependencies
     Spring Web      https://start.spring.io
     Json Simple     Version 1.1.1
-    Gradle
+    Gradle          https://gradle.org/install/
 
 ## Setup
 
-1. Install Gradle. 
+1. Install Gradle and Java 11. 
 
 2. (Optional) Configure port, modify the application.properties file in /java-restApi/rest-service/build/resources/main/
 
